@@ -36,6 +36,8 @@ public class MBlog implements Serializable {
 
     private Long userId;
 
+    private String author;
+
     private String title;
 
     private String description;

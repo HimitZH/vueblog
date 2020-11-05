@@ -27,19 +27,22 @@
         </el-form-item>
       </el-form>
     </div>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 export default {
-  components: { Header },
+  components: { Header,Footer },
   data() {
     return {
       ruleForm: {
         title: "",
         description: "",
-        content: ""
+        content: "",
+        author: this.$store.getters.getUserInfo.username
       },
       rules: {
         title: [
@@ -104,6 +107,7 @@ export default {
 <style scoped>
 .edit-content {
   text-align: center;
+  clear: both;
 }
 
 </style>

@@ -4,6 +4,8 @@ import Login from '@/views/Login.vue'
 import Blog from '@/views/Blog.vue'
 import BlogDetail from '@/views/BlogDetail.vue'
 import BlogEdit from '@/views/BlogEdit.vue'
+import Register from '@/views/register.vue'
+import User from '@/views/User.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -16,6 +18,11 @@ const routes = [
     path: '/blog',
     name: 'Blog',
     component: Blog
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register
   },
   {
     path: '/login',
@@ -34,6 +41,11 @@ const routes = [
     path: '/blog/:blogId',
     name: 'BlogDetail',
     component: BlogDetail
+  },
+  {
+    path: '/user/:username',
+    name: 'User',
+    component: User
   },
   {
     path: '/blog/:blogId/edit',

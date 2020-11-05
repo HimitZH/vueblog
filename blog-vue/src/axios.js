@@ -1,9 +1,9 @@
-import axios from 'axios'
+﻿import axios from 'axios'
 import Element from 'element-ui'
 import store from './store'
 import router from './router'
 
-axios.defaults.baseURL = "http://localhost:9090"
+axios.defaults.baseURL = "http://localhost:9090"  // 注意请开启springboot 不然数据有可能无法访问。
 
 // 前置拦截
 axios.interceptors.request.use(config => {
