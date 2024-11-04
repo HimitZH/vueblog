@@ -7,6 +7,9 @@ axios.defaults.baseURL = "http://localhost:9090"  // 注意请开启springboot �
 
 // 前置拦截
 axios.interceptors.request.use(config => {
+    //配置请求拦截器 全局携带token
+    //完成作业需要提pr 望理解 谢谢
+    config.headers.Authorization = localStorage.getItem('token');
     return config
 })
 

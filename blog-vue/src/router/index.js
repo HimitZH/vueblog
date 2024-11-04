@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '@/views/Login.vue'
-import Blog from '@/views/Blog.vue'
-import BlogDetail from '@/views/BlogDetail.vue'
-import BlogEdit from '@/views/BlogEdit.vue'
-import Register from '@/views/register.vue'
-import User from '@/views/User.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -17,22 +11,22 @@ const routes = [
   {
     path: '/blog',
     name: 'Blog',
-    component: Blog
+    component: () => import('@/views/Blog.vue')
   },
   {
     path: '/register',
     name: 'Register',
-    component: Register
+    component: () => import( '@/views/register.vue')
   },
   {
     path: '/login',
     name: 'Login',
-    component: Login
+    component: () => import('@/views/Login.vue')
   },
   {
     path: '/blog/add',
     name: 'BlogEdit',
-    component: BlogEdit,
+    component: () => import('@/views/BlogEdit.vue'),
     meta:{
       requireAuth: true
     }
@@ -40,17 +34,17 @@ const routes = [
   {
     path: '/blog/:blogId',
     name: 'BlogDetail',
-    component: BlogDetail
+    component: () => import('@/views/BlogDetail.vue')
   },
   {
     path: '/user/:username',
     name: 'User',
-    component: User
+    component: () => import('@/views/User.vue')
   },
   {
     path: '/blog/:blogId/edit',
     name: 'BlogEdit',
-    component: BlogEdit,
+    component: () => import('@/views/BlogEdit.vue'),
     meta:{
       requireAuth: true
     }
